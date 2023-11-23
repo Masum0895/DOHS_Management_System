@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: E3FDFD;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MdMasumBilla.RealEstateAgentDashboardController">
+  <tabs>
+    <Tab text="Property Listing">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="61.0" fitWidth="70.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@mirpurdohslogo.png" />
+                     </image>
+                  </ImageView>
+                  <VBox layoutX="105.0" layoutY="54.0" prefHeight="184.0" prefWidth="141.0">
+                     <children>
+                        <Label text="Title :" />
+                        <ComboBox fx:id="TitleComboBox" prefWidth="150.0" />
+                        <Label layoutX="10.0" layoutY="10.0" text="Description :" />
+                        <ComboBox fx:id="DescriptionComboBoox" prefWidth="150.0" />
+                        <Label layoutX="10.0" layoutY="27.0" text="Price :" />
+                        <TextField fx:id="PriceTextField" />
+                        <Label layoutX="10.0" layoutY="44.0" text="Location :" />
+                        <ComboBox fx:id="LocationComboBox" layoutX="10.0" layoutY="69.0" prefWidth="150.0" />
+                     </children>
+                  </VBox>
+                  <Button layoutX="130.0" layoutY="259.0" mnemonicParsing="false" onAction="#AddPropertyOnClick" prefHeight="25.0" prefWidth="91.0" text="Add Property" />
+                  <Button layoutX="496.0" layoutY="320.0" mnemonicParsing="false" onAction="#createBinFileOncCick" text="Create bin File" />
+                  <TableView fx:id="tableId" layoutX="277.0" layoutY="54.0" prefHeight="238.0" prefWidth="302.0">
+                     <columns>
+                        <TableColumn fx:id="PropertyTitle" prefWidth="75.0" text="Title" />
+                        <TableColumn fx:id="PropertyDescription" prefWidth="75.0" text="Description" />
+                        <TableColumn fx:id="PropertyPrice" prefWidth="75.0" text="Price" />
+                        <TableColumn fx:id="PropertyLocation" prefWidth="75.0" text="Location" />
+                     </columns>
+                  </TableView>
+                  <Button layoutX="277.0" layoutY="320.0" mnemonicParsing="false" onAction="#RemoveSelectedIemOnClick" text="Remove Item" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Construction Planning">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="10.0" layoutY="96.0" text="Project Title :" />
+                  <Label layoutX="208.0" layoutY="96.0" text="Project Scope:" />
+                  <Label layoutX="14.0" layoutY="145.0" text="Budget :" />
+                  <DatePicker fx:id="ConstructionStartDate" layoutX="79.0" layoutY="182.0" prefHeight="25.0" prefWidth="120.0" />
+                  <DatePicker fx:id="ConstructionEndDate" layoutX="281.0" layoutY="182.0" prefHeight="25.0" prefWidth="117.0" />
+                  <TextField fx:id="ProjectTitleTextBox" layoutX="85.0" layoutY="92.0" prefHeight="25.0" prefWidth="119.0" />
+                  <TextField fx:id="ProjectScopeTextBox" layoutX="290.0" layoutY="92.0" prefHeight="25.0" prefWidth="100.0" />
+                  <TextField fx:id="ConstructionPlanningBudgetTextBox" layoutX="67.0" layoutY="141.0" prefHeight="25.0" prefWidth="119.0" />
+                  <Label layoutX="15.0" layoutY="186.0" text="Start Date :" />
+                  <Label layoutX="218.0" layoutY="186.0" text="End Date :" />
+                  <Button layoutX="417.0" layoutY="129.0" mnemonicParsing="false" onAction="#ConstructionPlanningAddProjectOnClick" text="Add Project" />
+                  <ImageView fitHeight="61.0" fitWidth="70.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@mirpurdohslogo.png" />
+                     </image>
+                  </ImageView>
+                  <TableView fx:id="tableId2" layoutX="122.0" layoutY="222.0" prefHeight="149.0" prefWidth="373.0">
+                    <columns>
+                      <TableColumn fx:id="ProjectTitle" prefWidth="75.0" text="Title" />
+                      <TableColumn fx:id="ProjectScope" prefWidth="75.0" text="Scope" />
+                        <TableColumn fx:id="ProjectStartDate" prefWidth="75.0" text="StartDate" />
+                        <TableColumn fx:id="ProjectEndDate" prefWidth="75.0" text="EndDate" />
+                        <TableColumn fx:id="ProjectBudget" prefWidth="75.0" text="Budget" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="13.0" layoutY="332.0" mnemonicParsing="false" onAction="#createBinFileOncCick2" prefWidth="93.0" text="Add in bin File" />
+                  <Button layoutX="516.0" layoutY="332.0" mnemonicParsing="false" onAction="#RemoveSelectedItemOnClick2" text="Remove" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Project Management">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="61.0" fitWidth="70.0" layoutX="25.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@mirpurdohslogo.png" />
+                     </image>
+                  </ImageView>
+                  <ListView fx:id="phaseListView" layoutX="367.0" layoutY="57.0" prefHeight="200.0" prefWidth="200.0" />
+                  <Label layoutX="17.0" layoutY="107.0" text="Project Name :" />
+                  <Label layoutX="9.0" layoutY="149.0" text="Project Manager :" />
+                  <Label layoutX="26.0" layoutY="186.0" text="Team Size :" />
+                  <Label layoutX="17.0" layoutY="231.0" text="Project Phase :" />
+                  <TextField fx:id="projectNameTextBox" layoutX="115.0" layoutY="103.0" />
+                  <TextField fx:id="ProjectManagerTextBox" layoutX="115.0" layoutY="145.0" />
+                  <TextField fx:id="TeamSizeTextBox" layoutX="115.0" layoutY="182.0" />
+                  <TextField fx:id="ProjectPhaseTextBox" layoutX="115.0" layoutY="227.0" />
+                  <Label layoutX="369.0" layoutY="266.0" text="Add/Remove phase on this list View" />
+                  <Button layoutX="369.0" layoutY="297.0" mnemonicParsing="false" onAction="#AddPhaseInListViewOnClick" prefHeight="25.0" prefWidth="60.0" text="Add" />
+                  <Button layoutX="508.0" layoutY="297.0" mnemonicParsing="false" onAction="#RemovePhaseFromListViewOnClick" text="Remove" />
+                  <Button layoutX="85.0" layoutY="297.0" mnemonicParsing="false" onAction="#AddProjectManagementDataOnClick" prefHeight="25.0" prefWidth="99.0" text="Add to the bin" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Structural Engineering">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="61.0" fitWidth="70.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@mirpurdohslogo.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="188.0" layoutY="24.0" text="Structural Engineering Task">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="75.0" layoutY="98.0" promptText="Enter Total Load" />
+                  <Button layoutX="71.0" layoutY="145.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="158.0" text="Design Structural Elements" />
+                  <TextArea layoutX="310.0" layoutY="77.0" prefHeight="232.0" prefWidth="247.0" />
+                  <Button layoutX="71.0" layoutY="225.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="166.0" text="Measure Safety Compliance" />
+                  <Button layoutX="67.0" layoutY="277.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="189.0" text="Analyze Structural Requirement" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Finishing Works">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="61.0" fitWidth="70.0" layoutX="23.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@mirpurdohslogo.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="54.0" layoutY="112.0" text="WorkType :" />
+                  <TextField fx:id="workTypeTextField" layoutX="123.0" layoutY="108.0" prefHeight="25.0" prefWidth="129.0" />
+                  <TextField fx:id="durationTextField" layoutX="124.0" layoutY="159.0" prefHeight="25.0" prefWidth="129.0" />
+                  <Label layoutX="8.0" layoutY="163.0" text="EstimatedDuration :" />
+                  <Button layoutX="8.0" layoutY="201.0" mnemonicParsing="false" onAction="#addFinishingWorkOnClick" text="Add Work in Process" />
+                  <TableView fx:id="WorkDataTableView" layoutX="267.0" layoutY="66.0" prefHeight="270.0" prefWidth="319.0">
+                     <columns>
+                        <TableColumn fx:id="WorkTypeCol" prefWidth="101.33331298828125" text="WorkType  " />
+                        <TableColumn fx:id="DurationCol" prefWidth="124.66668701171875" text="EstDuration" />
+                        <TableColumn fx:id="statusCol" prefWidth="93.0" text="Status" />
+                     </columns>
+                  </TableView>
+                  <Button layoutX="126.0" layoutY="249.0" mnemonicParsing="false" onAction="#markWorkAsCompleted" text="Mark Work as Finish" />
+                  <Button layoutX="23.0" layoutY="324.0" mnemonicParsing="false" onAction="#WorkDataPdfOnClick" text="Generate PDF" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Property Transaction">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="61.0" fitWidth="70.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@mirpurdohslogo.png" />
+                     </image>
+                  </ImageView>
+                  <ComboBox fx:id="propertyTypeComboBox" layoutX="125.0" layoutY="96.0" prefWidth="150.0" promptText="Select an Option" />
+                  <Label layoutX="37.0" layoutY="100.0" text="PropertyType :" />
+                  <Label layoutX="87.0" layoutY="150.0" text="Title :" />
+                  <Label layoutX="86.0" layoutY="234.0" text="Price :" />
+                  <Label layoutX="66.0" layoutY="271.0" text="Location :" />
+                  <TextField fx:id="titleTextField" layoutX="126.0" layoutY="146.0" />
+                  <TextField fx:id="priceTextField" layoutX="126.0" layoutY="230.0" />
+                  <TextField fx:id="locationTextField" layoutX="126.0" layoutY="267.0" />
+                  <Button layoutX="149.0" layoutY="309.0" mnemonicParsing="false" onAction="#addTransactionOnClick" text="Add Transaction" />
+                  <TextArea fx:id="resultTextArea" layoutX="305.0" layoutY="92.0" prefHeight="200.0" prefWidth="270.0" />
+                  <Label layoutX="216.0" layoutY="31.0" text="Property Transaction">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="484.0" layoutY="309.0" mnemonicParsing="false" onAction="#downloadPdfOnClick" text="Download Pdf" />
+                  <ComboBox fx:id="DescriptionComboBox" layoutX="125.0" layoutY="186.0" prefWidth="150.0" promptText="Select an Option" />
+                  <Label layoutX="53.0" layoutY="190.0" text="Description :" />
+                  <Button layoutX="342.0" layoutY="334.0" mnemonicParsing="false" onAction="#logOutButtonOnClick" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 30;" text="Log Out" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
